@@ -138,40 +138,40 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Resource Include="Table\Images\chess_piece_black_bishop_T.png">
+    <Resource Include="Images\chess_piece_black_bishop_T.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Table\Images\chess_piece_black_king_T.png">
+    <Resource Include="Images\chess_piece_black_king_T.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Table\Images\chess_piece_black_knight_T.png">
+    <Resource Include="Images\chess_piece_black_knight_T.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Table\Images\chess_piece_black_pawn_T.png">
+    <Resource Include="Images\chess_piece_black_pawn_T.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Table\Images\chess_piece_black_queen_T.png">
+    <Resource Include="Images\chess_piece_black_queen_T.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Table\Images\chess_piece_black_rook_T.png">
+    <Resource Include="Images\chess_piece_black_rook_T.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Table\Images\chess_piece_white_bishop_T.png">
+    <Resource Include="Images\chess_piece_white_bishop_T.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Table\Images\chess_piece_white_king_T.png">
+    <Resource Include="Images\chess_piece_white_king_T.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Table\Images\chess_piece_white_knight_T.png">
+    <Resource Include="Images\chess_piece_white_knight_T.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Table\Images\chess_piece_white_pawn_T.png">
+    <Resource Include="Images\chess_piece_white_pawn_T.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Table\Images\chess_piece_white_queen_T.png">
+    <Resource Include="Images\chess_piece_white_queen_T.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Table\Images\chess_piece_white_rook_T.png">
+    <Resource Include="Images\chess_piece_white_rook_T.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

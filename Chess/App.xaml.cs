@@ -15,16 +15,11 @@ namespace Chess
     public partial class App : Application
     {
         /* protected override void OnStartup(StartupEventArgs e)
-         { // заместо startupUri можно прописать 
-
+         { 
              base.OnStartup(e);
-
              MainWindow mainWindow = new MainWindow
-             {
-                 DataContext = new MainViewModel()
-             };
-             mainWindow.Show()
-
-        }*/
+             { DataContext = new MainVM() };
+             mainWindow.Show();
+         }*/
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Chess.Model
 {
-    public enum PieceType //(виды фигур бец цветов. )
+    public enum PieceType 
     {
         Pawn,
         Rook,
@@ -14,6 +14,5 @@ namespace Chess.Model
         Bishop,
         Queen,
         King
-            //каждой отдельный класс
     }
 }

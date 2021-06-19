@@ -8,15 +8,14 @@ using System.Linq;
 namespace Chess.Model
 {
     public class Board : ReactiveObject
-    {// класс доски - спавн и тд
+    {
         private SourceCache<IPiece, Square> pieces;
-        public IObservableCollection<IPiece> Pieces { get; }//set;
-
+        public IObservableCollection<IPiece> Pieces { get; }
+        public void PutPiece(IPiece Piece) { pieces.AddOrUpdate(Piece); }
         public Board()
         {
             pieces = new SourceCache<IPiece, Square>(k => k.Pos);
             pieces.AddOrUpdate(new IPiece[] {
-                //спавн
                 new Pawn(new Square(0, 6), Player.White),
                 new Pawn(new Square(1, 6), Player.White),
                 new Pawn(new Square(2, 6), Player.White),
@@ -34,8 +33,7 @@ namespace Chess.Model
                 new Bishop(new Square(5, 7), Player.White),
                 new Knight(new Square(6, 7), Player.White),
                 new Rook(new Square(7, 7), Player.White),
-                //
-                //
+
                 new Pawn(new Square(0, 1), Player.Black),
                 new Pawn(new Square(1, 1), Player.Black),
                 new Pawn(new Square(2, 1), Player.Black),
@@ -54,15 +52,11 @@ namespace Chess.Model
                 new Knight(new Square(6, 0), Player.Black),
                 new Rook(new Square(7, 0), Player.Black)
                 });
-            //
             Pieces = new ObservableCollectionExtended<IPiece>();
             pieces.Connect().Bind(Pieces).Subscribe();//подписываем обработчик на последовательность
         }
-
         public IPiece GetPiece(Square S) => pieces.Items.SingleOrDefault(p => p.Pos.Equals(S));
-
         public void KillPiece(Square S) { pieces.Remove(S); }
-
         public void MovePiece(Square From, Square To)
         {
             IPiece PieceToMove = GetPiece(From);
@@ -74,7 +68,5 @@ namespace Chess.Model
                 pieces.RemoveKey(From);
             }
         }
-
-        public void PutPiece(IPiece Piece) { pieces.AddOrUpdate(Piece); }
     }
 }

@@ -24,8 +24,8 @@ namespace Chess.Model.Pieces
 
             foreach (Delta D in Deltas)
             {
-                var Obstacle = BoardState.GetPiece(S + D);
-                if ((Obstacle == null || Obstacle.Player != Player) && !(S + D).IsOffBoard())
+                var O = BoardState.GetPiece(S + D);
+                if ((O == null || O.Player != Player) && !(S + D).IsOffBoard())
                     Moves.Add(S + D);
             }
             return Moves;

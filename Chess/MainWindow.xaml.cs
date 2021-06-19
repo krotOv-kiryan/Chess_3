@@ -24,22 +24,15 @@ namespace Chess
     /// </summary>
     public partial class MainWindow : Window
     {
-
         public MainWindow()
         {
             InitializeComponent();
             DataContext = new MainVM();
         }
-
-        //public Point GetMousePos() => Mouse.GetPosition(ChessBoard);
-
         private void Canvas_MouseDown(object sender, MouseButtonEventArgs e)
         {
             var vm = (MainVM)this.DataContext;
             vm?.Square_clicked(e.GetPosition(ChessBoard));
-
-
-            //?.Square_clicked(e.GetPosition(ChessBoard)); //
         }
     }
 }

@@ -12,8 +12,7 @@ namespace Chess.Model.Pieces
        
         private ObservableAsPropertyHelper<bool> transformation;
         private bool LongMove => longMove.Value;
-        private bool Transformation => transformation.Value;
-
+        //private bool Transformation => transformation.Value;
         public Pawn(Square Position, Player Player) : base(Position, Player)
         {
             Type = PieceType.Pawn;
@@ -31,9 +30,9 @@ namespace Chess.Model.Pieces
                 .Select(x => Pos.Rank == 6 && Player == Player.White || Pos.Rank == 1 && Player == Player.Black)
                 .ToProperty(this, x => x.LongMove);
             
-            transformation = this.WhenAny(x => x.Pos, _ => new bool())
+           /* transformation = this.WhenAny(x => x.Pos, _ => new bool())
             .Select(x => Pos.Rank == 0 && Player == Player.White || Pos.Rank == 7 && Player == Player.Black)
-                .ToProperty(this, x => x.Transformation);
+                .ToProperty(this, x => x.Transformation);*/
             
         }
 
@@ -44,23 +43,29 @@ namespace Chess.Model.Pieces
 
             Square S = Pos + D;
 
-            var Obstacle = BoardState.GetPiece(S);
-            if (Obstacle == null)
+            var O = BoardState.GetPiece(S);
+            if (O == null)
             {
                 Moves.Add(S);
                 if (LongMove)
                 {
                     S += D;
-                    Obstacle = BoardState.GetPiece(S);
-                    if (Obstacle == null) Moves.Add(S);
+                    O = BoardState.GetPiece(S);
+                    if (O == null) Moves.Add(S);
                 }
+                /*if (Transformation)
+                {
+                    S += D;
+                    O = BoardState.GetPiece(S);
+                    if (O == null) Moves.Add(S);
+                }*/
             }
 
             S = Pos;
             foreach (Delta A in attacks)
             {
-                Obstacle = BoardState.GetPiece(S + A);
-                if (Obstacle != null && Obstacle.Player != Player) Moves.Add(S + A);
+                O = BoardState.GetPiece(S + A);
+                if (O != null && O.Player != Player) Moves.Add(S + A);
             }
             return Moves;
         }
